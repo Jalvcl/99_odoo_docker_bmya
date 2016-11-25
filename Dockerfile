@@ -9,14 +9,14 @@ USER root
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -qq && apt-get install -y locales -qq
-RUN echo 'es_AR.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen \
-	echo 'es_CL.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen \
-	echo 'es_US.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen \
-	echo 'C.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
+RUN echo 'es_AR.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
+RUN echo 'es_CL.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
+RUN echo 'es_US.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
+RUN echo 'C.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
 RUN dpkg-reconfigure locales && /usr/sbin/update-locale LANG=C.UTF-8
-ENV LANG C.UTF-8 \
-	LANGUAGE C.UTF-8 \
-	LC_ALL C.UTF-8
+ENV LANG C.UTF-8
+ENV LANGUAGE C.UTF-8
+ENV LC_ALL C.UTF-8
 
 
 # Install some deps (reordenado con criterio buenas practicas de Docker, orden alfabetico y un solo comando)
