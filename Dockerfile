@@ -22,7 +22,7 @@ ENV LC_ALL C.UTF-8
 # Install some deps (reordenado con criterio buenas practicas de Docker, orden alfabetico y un solo comando)
 # adds slqalchemy
 RUN apt-get update && apt-get install -y \
-	apt-utils \ #dependedencia solicitada en build docker
+	apt-utils \ 
 	ghostscript \
 	git \
 	python-pip \
