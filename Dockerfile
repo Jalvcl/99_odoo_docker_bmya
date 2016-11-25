@@ -8,8 +8,7 @@ USER root
 # Generate locale (es_AR for right odoo es_AR language config, and C.UTF-8 for postgres and general locale data)
 
 ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update -qq && apt-get install -y
-RUN locales -qq
+RUN apt-get update -qq && apt-get install -y locales -qq
 RUN echo 'es_AR.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen \
 	echo 'es_CL.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen \
 	echo 'es_US.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen \
